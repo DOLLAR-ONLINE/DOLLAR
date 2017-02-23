@@ -972,31 +972,31 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 		nSubsidy = 1000000 * COIN;
 
 	    if (pindexBest->nHeight+1 > 262800)
-		nSubsidy = 2 * COIN;
+		nSubsidy = 0 * COIN;
 		
 		if (pindexBest->nHeight+1 > 525600)
-		nSubsidy = 3 * COIN;
+		nSubsidy = 0 * COIN;
 		
 		if (pindexBest->nHeight+1 > 788400)
-		nSubsidy = 4 * COIN;
+		nSubsidy = 0 * COIN;
 		
 		if (pindexBest->nHeight+1 > 1051200)
-		nSubsidy = 5 * COIN;
+		nSubsidy = 0 * COIN;
 		
 		if (pindexBest->nHeight+1 > 1314000)
-		nSubsidy = 6 * COIN;
+		nSubsidy = 0 * COIN;
 		
 		if (pindexBest->nHeight+1 > 1576800)
-		nSubsidy = 7 * COIN;
+		nSubsidy = 0 * COIN;
 		
 		if (pindexBest->nHeight+1 > 1839600)
-		nSubsidy = 8 * COIN;
+		nSubsidy = 0 * COIN;
 		
 		if (pindexBest->nHeight+1 > 2102400)
-		nSubsidy = 9 * COIN;
+		nSubsidy = 0 * COIN;
 		
 		if (pindexBest->nHeight+1 > 2365200)
-		nSubsidy = 10 * COIN;
+		nSubsidy = 0 * COIN;
 
 	
     return nSubsidy + nFees;
