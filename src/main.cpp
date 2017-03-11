@@ -972,32 +972,7 @@ int64_t GetProofOfWorkReward(int64_t nFees)
 		nSubsidy = 1000000 * COIN;
 
 	    if (pindexBest->nHeight+1 > 262800)
-		nSubsidy = 0 * COIN;
-		
-		if (pindexBest->nHeight+1 > 525600)
-		nSubsidy = 0 * COIN;
-		
-		if (pindexBest->nHeight+1 > 788400)
-		nSubsidy = 0 * COIN;
-		
-		if (pindexBest->nHeight+1 > 1051200)
-		nSubsidy = 0 * COIN;
-		
-		if (pindexBest->nHeight+1 > 1314000)
-		nSubsidy = 0 * COIN;
-		
-		if (pindexBest->nHeight+1 > 1576800)
-		nSubsidy = 0 * COIN;
-		
-		if (pindexBest->nHeight+1 > 1839600)
-		nSubsidy = 0 * COIN;
-		
-		if (pindexBest->nHeight+1 > 2102400)
-		nSubsidy = 0 * COIN;
-		
-		if (pindexBest->nHeight+1 > 2365200)
-		nSubsidy = 0 * COIN;
-
+		nSubsidy = 2 * COIN;
 	
     return nSubsidy + nFees;
 }
@@ -1008,8 +983,13 @@ int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees)
 {
     int64_t nRewardCoinYear;
 
-    nRewardCoinYear = MAX_MINT_PROOF_OF_STAKE;
+    if (pindexBest->nHeight <= LAST_POW_BLOCK)
+       nRewardCoinYear = MAX_MINT_PROOF_OF_STAKE;   // 20% reward before block 300000
 
+    else 
+       nRewardCoinYear = MAX_MINT_PROOF_OF_STAKE_V2;    // change to 50% reward
+      
+      
     int64_t nSubsidy = nCoinAge * nRewardCoinYear / 365 / COIN;
 
 
